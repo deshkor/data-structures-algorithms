@@ -1,18 +1,18 @@
-package insertionsort
+package sorting
 
 import "golang.org/x/exp/constraints"
 
-func InsertionSort[T constraints.Ordered](values []T) []T {
-	for idx := 1; idx < len(values); idx++ {
-		key := values[idx]
+func InsertionSort[T constraints.Ordered](vals []T) []T {
+	for idx := 1; idx < len(vals); idx++ {
+		key := vals[idx]
 
 		j := idx - 1
-		for ; j >= 0 && values[j] > key; j-- {
-			values[j+1] = values[j]
+		for ; j >= 0 && vals[j] > key; j-- {
+			vals[j+1] = vals[j]
 		}
 
-		values[j+1] = key
+		vals[j+1] = key
 	}
 
-	return values
+	return vals
 }
