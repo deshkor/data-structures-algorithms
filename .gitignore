@@ -1,0 +1,4 @@
+/golang/vendor
+*.swp
+*.swo
+/rust/target
