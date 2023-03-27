@@ -1,5 +1,4 @@
-pub fn insertion_sort<T: Ord + Copy>(vals: &mut [T]) {
-	
+pub fn insertion_sort<T: Ord + Copy>(vals: &mut [T]) {	
 	for i in 1..vals.len() {
 		let key = vals[i];
 		let mut j = i;
@@ -22,10 +21,9 @@ mod tests {
 	#[test]
 	fn basic() {
 		let expected_vals: Vec<isize> = vec![-1, 1, 3, 4, 5];
-		let mut values: Vec<isize> = vec![5, -1, 3, 4, 1];
-		insertion_sort(&mut values);
-		println!("{:?}", values);
+		let mut vals: Vec<isize> = vec![5, -1, 3, 4, 1];
+		insertion_sort(&mut vals);
 
-		assert!(equal(&expected_vals, &values));
+		assert!(equal(&expected_vals, &vals));
 	}
 }
